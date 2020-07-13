@@ -3,14 +3,16 @@
   <PropertyGroup>
     <Version>0.1-alpha</Version>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <PackageId>Claytondus.AmazonMWS.MerchantFulfillment</PackageId>
+    <PackageId>Webthinking.AmazonMWS.MerchantFulfillment</PackageId>
     <PackageVersion>0.4.0</PackageVersion>
     <Description>.NET Standard fork of Amazon MWS MerchantFulfillment client</Description>
-    <Authors>Amazon and Clayton Davis</Authors>
-    <Copyright>Copyright 2017 (c) Amazon Technologies, Inc. and Clayton Davis. All rights reserved.</Copyright>
-    <PackageProjectUrl>https://github.com/claytondus/Claytondus.AmazonMWS</PackageProjectUrl>
+    <Authors>Amazon and Clayton Davis and Webthinking</Authors>
+    <Copyright>Copyright 2017 (c) Amazon Technologies, Inc. and Clayton Davis and Webthinking. All rights reserved.</Copyright>
+    <PackageProjectUrl>https://github.com/michaelsowa/Claytondus.AmazonMWS</PackageProjectUrl>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <Company>Amazon and Clayton Davis and Webthinking</Company>
+    <Product>Webthinking.AmazonMWS.MerchantFulfillment</Product>
   </PropertyGroup>
 
   <ItemGroup>
