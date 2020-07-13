@@ -10,10 +10,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Setup dotnet
-        uses: actions/setup-dotnet@v1
-        with:
-          dotnet-version: 3.1.200
+     # - name: Setup dotnet
+     #   uses: actions/setup-dotnet@v1
+     #   with:
+     #     dotnet-version: 3.1.200
 
       # Publish
       - name: publish on version change
@@ -30,7 +30,7 @@ jobs:
           VERSION_FILE_PATH: Claytondus.AmazonMWS.MerchantFulfillment/Claytondus.AmazonMWS.MerchantFulfillment.nuspec
 
           # Regex pattern to extract version info in a capturing group
-          # VERSION_REGEX: <Version>(.*)<\/Version>
+          VERSION_REGEX: <Version>(.*)<\/Version>
           
           # Useful with external providers like Nerdbank.GitVersioning, ignores VERSION_FILE_PATH & VERSION_REGEX
           # VERSION_STATIC: 1.0.0
