@@ -24,6 +24,8 @@ namespace Claytondus.AmazonMWS.MerchantFulfillment.Model
 
         private string _orderItemId;
         private decimal _quantity;
+        private decimal _itemWeight;
+        private string _itemDescription;
 
         /// <summary>
         /// Gets and sets the OrderItemId property.
@@ -83,17 +85,79 @@ namespace Claytondus.AmazonMWS.MerchantFulfillment.Model
             return this._quantity != null;
         }
 
+        /// <summary>
+        /// Gets and sets the ItemWeight property.
+        /// </summary>
+        public decimal ItemWeight
+        {
+            get { return this._itemWeight; }
+            set { this._itemWeight = value; }
+        }
+
+        /// <summary>
+        /// Sets the ItemWeight property.
+        /// </summary>
+        /// <param name="ItemWeight">ItemWeight property.</param>
+        /// <returns>this instance.</returns>
+        public Item WithItemWeight(decimal itemWeight)
+        {
+            this._itemWeight = itemWeight;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if ItemWeight property is set.
+        /// </summary>
+        /// <returns>true if ItemWeight property is set.</returns>
+        public bool IsSetItemWeight()
+        {
+            return this._itemWeight != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the ItemDescription property.
+        /// </summary>
+        public string ItemDescription
+        {
+            get { return this._itemDescription; }
+            set { this._itemDescription = value; }
+        }
+
+        /// <summary>
+        /// Sets the ItemDescription property.
+        /// </summary>
+        /// <param name="ItemDescription">ItemDescription property.</param>
+        /// <returns>this instance.</returns>
+        public Item WithItemDescription(string itemDescription)
+        {
+            this._itemDescription = itemDescription;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if ItemDescription property is set.
+        /// </summary>
+        /// <returns>true if ItemDescription property is set.</returns>
+        public bool IsSetItemDescription()
+        {
+            return this._itemDescription != null;
+        }
 
         public override void ReadFragmentFrom(IMwsReader reader)
         {
             _orderItemId = reader.Read<string>("OrderItemId");
             _quantity = reader.Read<decimal>("Quantity");
+            _itemWeight = reader.Read<decimal>("ItemWeight");
+            _itemDescription = reader.Read<string>("ItemDescription");
         }
 
         public override void WriteFragmentTo(IMwsWriter writer)
         {
             writer.Write("OrderItemId", _orderItemId);
             writer.Write("Quantity", _quantity);
+            writer.Write("ItemWeight", _itemWeight);
+            writer.Write("ItemDescription", _itemDescription);
         }
 
         public override void WriteTo(IMwsWriter writer)
@@ -101,10 +165,17 @@ namespace Claytondus.AmazonMWS.MerchantFulfillment.Model
             writer.Write("https://mws.amazonservices.com/MerchantFulfillment/2015-06-01", "Item", this);
         }
 
-    public Item (string orderItemId,decimal quantity) : base() {
-        this._orderItemId = orderItemId;
-        this._quantity = quantity;
-    }
+        public Item(string orderItemId, decimal quantity, decimal itemWeight, string itemDescription) : base()
+        {
+            this._orderItemId = orderItemId;
+            this._quantity = quantity;
+            this._itemWeight = itemWeight;
+            this._itemDescription = itemDescription;
+        }
+        public Item (string orderItemId,decimal quantity) : base() {
+            this._orderItemId = orderItemId;
+            this._quantity = quantity;
+        }
 
         public Item() : base()
         {
